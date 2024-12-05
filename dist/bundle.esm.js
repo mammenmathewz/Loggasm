@@ -354,12 +354,13 @@ const art = [
   }
 
 function oopsPrint(message, options = {}) {
-  const heading = options.heading || 'LOG-MESSAGE';
-
-  const figletMessage = figlet.textSync(heading, { horizontalLayout: 'default' });
 
   console.log(chalk.green(getRandomLogArt()));
-  console.log(chalk.blueBright(figletMessage)); 
+  
+  if (options.heading) {
+    const figletMessage = figlet.textSync(options.heading, { horizontalLayout: 'default' });
+    console.log(chalk.blueBright(figletMessage));
+  }
   console.log(chalk.yellow(`[Message]: ${message}`));
 
   if (options.details) {
