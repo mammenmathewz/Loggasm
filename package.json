@@ -1,6 +1,6 @@
 {
   "name": "loggasm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "exports": {
