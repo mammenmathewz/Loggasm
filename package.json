@@ -1,25 +1,40 @@
 {
   "name": "loggasm",
-  "version": "1.0.0",
-  "main": "dist/bundle.cjs.js",  
-  "module": "dist/bundle.esm.js",  
+  "version": "1.0.1",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
   "exports": {
     ".": {
       "import": "./dist/bundle.esm.js"
     }
   },
-  "type": "module",  
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
   },
   "dependencies": {
     "chalk": "^5.3.0",
-    "figlet": "^1.8.0"
+    "figlet": "^1.8.0",
+    "express": "^4.21.1"
   },
   "devDependencies": {
     "rollup": "^4.28.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mammenmathewz/Loggasm.git"
+  },
+  "keywords": [
+    "express",
+    "logging",
+    "error handling",
+    "middleware",
+    "humor",
+    "dev-tools"
+  ],
+  "license": "MIT"
 }
+
