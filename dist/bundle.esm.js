@@ -353,11 +353,13 @@ const art = [
     return art[randomIndex];
   }
 
-function OopsPrint(message, options = {}) {
+function oopsPrint(message, options = {}) {
+  const heading = options.heading || 'LOG-MESSAGE';
+
+  const figletMessage = figlet.textSync(heading, { horizontalLayout: 'default' });
+
   console.log(chalk.green(getRandomLogArt()));
-  console.log(
-    chalk.blueBright(figlet.textSync('LOG-MESSAGE', { horizontalLayout: 'default' }))
-  );
+  console.log(chalk.blueBright(figletMessage)); 
   console.log(chalk.yellow(`[Message]: ${message}`));
 
   if (options.details) {
@@ -365,5 +367,5 @@ function OopsPrint(message, options = {}) {
   }
 }
 
-export { OopsPrint, OopsWare };
+export { OopsWare, oopsPrint };
 //# sourceMappingURL=bundle.esm.js.map

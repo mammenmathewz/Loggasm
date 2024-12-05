@@ -1,4 +1,6 @@
-import { OopsWare } from "./src/middleware.js"
-import {OopsPrint} from "./src/logger.js"
+import { OopsWare } from "./src/middleware.js";
+import { oopsPrint } from "./src/logger.js";
 
-export { OopsWare, OopsPrint };
+
+export { OopsWare, oopsPrint };
+
