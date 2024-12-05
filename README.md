@@ -28,7 +28,7 @@ Don’t overthink it. Just install it.
 npm install logasm 
 
 ```
-    ## Usage 🛠️
+## Usage 🛠️
 Here’s how you can sprinkle some Logasm magic into your project:
 
 ### Basic Logging
