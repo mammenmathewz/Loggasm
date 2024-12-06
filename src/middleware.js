@@ -9,19 +9,30 @@ function OopsWare(dev = false) {
         chalk.red(figlet.textSync('ERROR!', { horizontalLayout: 'default' }))
       );
       console.log(chalk.red(getRandomErrorArt()));
-      console.error(chalk.bgRed(`Error: ${err.message}`));
-      console.error(chalk.red(`[Stack]: ${err.stack}`));
+      console.error(chalk.bgRed(`Error: ${err?.message || 'Unknown error'}`));
+      console.error(chalk.red(`[Stack]: ${err?.stack || 'No stack trace'}`));
 
-      res.status(500).json({
-        error: err.message,
-        stack: err.stack, 
-      });
+      if (res && typeof res.status === 'function') {
+        res.status(500).json({
+          error: err?.message || 'Unknown error',
+          stack: err?.stack || 'No stack trace',
+        });
+      } else {
+        console.error('OopsWare: Response object is undefined or invalid.');
+      }
     } else {
-      console.error(chalk.bgRed(`Error: ${err.message}`));
-      res.status(500).json({ error: 'Something went wrong. Please try again.' });
+      console.error(chalk.bgRed(`Error: ${err?.message || 'Unknown error'}`));
+
+      if (res && typeof res.status === 'function') {
+        res.status(500).json({
+          error: 'Something went wrong. Please try again.',
+        });
+      } else {
+        console.error('OopsWare: Response object is undefined or invalid.');
+      }
     }
+    next();
   };
 }
 
 export { OopsWare };
-
