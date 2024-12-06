@@ -25,10 +25,9 @@ With Logasm, you'll:
 Don’t overthink it. Just install it.  
  
 ```
-npm install logasm 
-
+npm install logasm
 ```
-    ## Usage 🛠️
+## Usage 🛠️
 Here’s how you can sprinkle some Logasm magic into your project:
 
 ### Basic Logging
@@ -53,9 +52,9 @@ Plug in OopsWare and handle errors without breaking a sweat:
 
 ```javascript 
 import { OopsWare } from 'logasm';
-app.use(OopsWare(true)); // defult is false for production keep it like that .
+app.use(OopsWare(true)); // default is false for production keep it like that .
 ```
-or
+          or
 ```javascript
 const isDev = process.env.NODE_ENV === 'development'; 
 app.use(OopsWare(isDev)); 
