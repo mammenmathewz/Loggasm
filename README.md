@@ -53,7 +53,12 @@ Plug in OopsWare and handle errors without breaking a sweat:
 
 ```javascript 
 import { OopsWare } from 'logasm';
-app.use(OopsWare); // Now your errors are handled....
+app.use(OopsWare(true)); // defult is false for production keep it like that .
+```
+or
+```javascript
+const isDev = process.env.NODE_ENV === 'development'; 
+app.use(OopsWare(isDev)); 
 ```
 
 Example: 
