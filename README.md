@@ -18,7 +18,7 @@ With Logasm, you'll:
 ## Features 🌟
 - **OopsPrint**: Print logs that might solve your problem or roast you for having it in the first place.  
 - **OopsWare**: Express middleware that handles errors with a dash of humor and a side-eye.  
-- **ES Modules Only**: Logasm is designed to work with ES Modules for the modern JavaScript ecosystem. Sorry, CommonJS—this one's for the cool kids.
+- **ES Modules Only**:  because clearly, CommonJS is just a fancy term for "I don't know what I'm doing." 🧐
 ## Installation 🚀
 
 
