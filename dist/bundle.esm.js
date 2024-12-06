@@ -247,17 +247,37 @@ const art$1 = [
     return art$1[randomIndex];
   }
 
-function OopsWare(err, req, res, next) {
-  console.log(
-    chalk.red(figlet.textSync('ERROR!', { horizontalLayout: 'default' }))
-  );
+function OopsWare(dev = false) {
+  return (err, req, res, next) => {
+    if (dev) {
+      console.log(
+        chalk.red(figlet.textSync('ERROR!', { horizontalLayout: 'default' }))
+      );
+      console.log(chalk.red(getRandomErrorArt()));
+      console.error(chalk.bgRed(`Error: ${err?.message || 'Unknown error'}`));
+      console.error(chalk.red(`[Stack]: ${err?.stack || 'No stack trace'}`));
 
-  console.log(chalk.red(getRandomErrorArt()));
+      if (res && typeof res.status === 'function') {
+        res.status(500).json({
+          error: err?.message || 'Unknown error',
+          stack: err?.stack || 'No stack trace',
+        });
+      } else {
+        console.error('OopsWare: Response object is undefined or invalid.');
+      }
+    } else {
+      console.error(chalk.bgRed(`Error: ${err?.message || 'Unknown error'}`));
 
-  console.error(chalk.bgRed(`Error: ${err.message}`));
-  console.error(chalk.red(`[Stack]: ${err.stack}`));
-
-  res.status(500).json({ error: err.message });
+      if (res && typeof res.status === 'function') {
+        res.status(500).json({
+          error: 'Something went wrong. Please try again.',
+        });
+      } else {
+        console.error('OopsWare: Response object is undefined or invalid.');
+      }
+    }
+    next();
+  };
 }
 
 const art = [
@@ -354,10 +374,9 @@ const art = [
   }
 
 function oopsPrint(message, options = {}) {
-
-  console.log(chalk.green(getRandomLogArt()));
   
   if (options.heading) {
+    console.log(chalk.green(getRandomLogArt()));
     const figletMessage = figlet.textSync(options.heading, { horizontalLayout: 'default' });
     console.log(chalk.blueBright(figletMessage));
   }
