@@ -43,9 +43,9 @@ oopsPrint('The server is waking up. Please hold your applause!', {
 ```
 **Custom Heading for Logs:** The `oopsPrint` now accepts a dynamic heading for logs (`heading: 'YOUR_CUSTOM_HEADING'`).
 ```javascript
-oopsPrint('Server started successfully', { heading: 'SUCCESS' }); 
+oopsPrint('Server started successfully', { heading: 'SUCCESS' }); //Only use heading on development
 ```
-
+**Note: Headings are fun and all, but in production? They’re like adding glitter to a fire—unnecessary, messy, and bound to cause regret. Keep it clean, keep it simple—save the drama for development.**
 
 ## Express Middleware - Handle Errors Like a Boss
 Plug in OopsWare and handle errors without breaking a sweat:

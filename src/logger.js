@@ -3,10 +3,9 @@ import figlet from 'figlet';
 import { getRandomLogArt } from '../src/art/logArt.js';
 
 function oopsPrint(message, options = {}) {
-
-  console.log(chalk.green(getRandomLogArt()));
   
   if (options.heading) {
+    console.log(chalk.green(getRandomLogArt()));
     const figletMessage = figlet.textSync(options.heading, { horizontalLayout: 'default' });
     console.log(chalk.blueBright(figletMessage));
   }
