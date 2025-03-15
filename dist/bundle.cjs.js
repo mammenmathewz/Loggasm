@@ -1,5 +1,7 @@
-import figlet from 'figlet';
-import chalk from 'chalk';
+'use strict';
+
+var figlet = require('figlet');
+var chalk = require('chalk');
 
 const art$1 = [
     `⢿⣿⣿⣿⣭⠹⠛⠛⠛⢿⣿⣿⣿⣿⡿⣿⠷⠶⠿⢻⣿⣛⣦⣙⠻⣿
@@ -358,5 +360,6 @@ function oopsPrint(message, options = {}) {
     }
 }
 
-export { OopsWare, oopsPrint };
-//# sourceMappingURL=bundle.esm.js.map
+exports.OopsWare = OopsWare;
+exports.oopsPrint = oopsPrint;
+//# sourceMappingURL=bundle.cjs.js.map

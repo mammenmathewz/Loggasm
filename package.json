@@ -3,25 +3,29 @@
   "version": "1.1.4",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./dist/bundle.esm.js"
-    }
+    "import": "./dist/bundle.esm.js",
+    "require": "./dist/bundle.cjs.js"
   },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
   },
   "dependencies": {
-    "chalk": "^5.3.0",
-    "figlet": "^1.8.0",
-    "express": "^4.21.1"
+    "chalk": "^5.4.1",
+    "express": "^4.21.1",
+    "figlet": "^1.8.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/chalk": "^2.2.4",
+    "@types/express": "^5.0.0",
+    "@types/figlet": "^1.7.0",
     "rollup": "^4.28.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "typescript": "^5.8.2"
   },
   "repository": {
     "type": "git",
@@ -32,9 +36,7 @@
     "logging",
     "error handling",
     "middleware",
-    "humor",
     "dev-tools"
   ],
   "license": "MIT"
 }
-
